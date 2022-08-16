@@ -1,0 +1,28 @@
+/* Variables para colores y utilidades (btn, etc) */
+:root {
+    --color-primario: #e50914; 
+    
+    /* Padding en los acordeones (FAQ) */
+    --acordeon-padding: 1.8rem;
+    --acordeon-padding-der: 1.8rem;
+
+}
+
+.btn--primario {
+    background-color: var(--color-primario);
+    line-height: normal;
+    padding: 0.7rem 1.7rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 0.3rem;
+    text-transform: capitalize;
+}
+
+.section_divisor {
+    border: 6px solid #222;
+}
+
+$colores: (
+    'faq-bckg' : #303030,
+    
+);

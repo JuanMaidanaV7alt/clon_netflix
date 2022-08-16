@@ -1,0 +1,148 @@
+/* "Nuestra Historia", siguiendo el diseño de la landing original:
+cards con dos columnas, una con texto y la otra con contenido multimedia */
+.story__card {
+    padding: 5rem 5%;
+    display: grid;
+    grid-row-gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    & &__txt {
+        text-align: center;
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+    }
+
+    & &__media {
+        display: grid;
+        place-items: center;
+
+        /* Estilo para la primera card (video en TV) */
+        .tv__anim__container {
+            width: 30rem;
+            height: 23.4rem;
+            position: relative;
+            overflow: hidden;
+
+            .tv_img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+            }
+
+            .tv__anim {
+                position: absolute;
+                top: 0.8rem;
+                left: 4rem;
+                width: 22.1rem;
+                height: 21rem;
+            }
+
+        }
+
+        /* Estilo para segunda card (afiche de Stranger Things) */
+        .descarga__container {
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .descarga__container__anim {
+                display: grid;
+                grid-template-columns: 4rem 1fr 5rem;
+                width: 60%;
+                height: 8rem;
+                padding: 1rem;
+                align-items: center;
+                // border: 2px solid rgba(255, 255, 255, 0.25);
+                border-radius: 1rem;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 5%;
+                background: black;
+                box-shadow: 0 0 2em 0 #000;
+
+                .afiche {
+                    height: 90%;
+                }
+
+                .descarga__gif {
+                    height: 90%;
+                }
+
+                .txt__container {
+                    padding-left: 2rem;
+
+                    .title {
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .descargando {
+                        font-size: 1.2rem;
+                        color: #0071eb;
+                    }
+                }
+            }
+        }
+
+        .kids {
+            width: 100%;
+            
+        }
+    }
+
+    /* Estilo para el video de la tercera card, quizá deba emprolijarlo 
+    cambiando nombres de clases, de momento me fui al sitio de Netflix 
+    y repliqué lo que fui viendo ahí */
+    & &__media-container {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 1 auto;
+        height: 100%;
+        width: 48%;
+
+        .story__card__animation {
+            margin: -5% -10% 0 0;
+            overflow: hidden;
+            position: relative;
+            
+            img {
+                position: relative;
+                z-index: 2;
+            }
+
+            .tv__anim__container {
+                height: 100%;
+                left: 50%;
+                max-height: 47%;
+                max-width: 65%;
+                position: absolute;
+                top: 34%;
+                transform: translate(-45%,-50%);
+                width: 100%;
+
+                video {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+}

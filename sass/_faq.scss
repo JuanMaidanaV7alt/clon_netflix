@@ -1,0 +1,66 @@
+/* Preguntas frecuentes */
+.faq {
+    padding: 7rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 80%;
+
+    & &__title {
+        text-align: center;
+        font-size: 2.5rem;
+        line-height: 1.8;
+    }
+
+    .acordeon {
+        list-style: none;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        display: grid;
+        grid-row-gap: 1rem;
+        font-size: 2rem;
+
+        .acordeon__li {
+            .pregunta {
+                background-color: map-get($colores, faq-bckg);
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: var(--acordeon-padding);
+                padding-right: var(--acordeon-padding-der);
+                margin-bottom: 1px;
+                font-size: inherit;
+                position: relative;
+                cursor: pointer;
+
+                .svg-icon {
+                    fill: #fff;
+                    height: 1em;
+                    position: absolute;
+                    right: 1em;
+                    top: 50%;
+                    transform: translateY(-50%) rotate(-45deg);
+                    width: 1em;
+                }
+            }
+
+            .respuesta {
+                background-color: map-get($colores, faq-bckg);
+                padding: var(--acordeon-padding);
+                display: none;
+
+            }
+        }
+
+        /* Clase active a llamar con JS: translate al svg de los acordeones */
+        .acordeon__li.active {
+
+            .pregunta .svg-icon {
+                transform: translateY(-50%);
+            }
+
+            .respuesta {
+                display: block;
+            }
+        }
+    }
+}

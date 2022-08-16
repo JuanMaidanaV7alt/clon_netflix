@@ -1,0 +1,477 @@
+@charset "UTF-8";
+/* Reset y aspectos generales */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: black;
+}
+
+html {
+  font-size: 62.5%;
+  /* Tamaño REM = 10px */
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+a:active,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+/* Variables para colores y utilidades (btn, etc) */
+:root {
+  --color-primario: #e50914;
+  /* Padding en los acordeones (FAQ) */
+  --acordeon-padding: 1.8rem;
+  --acordeon-padding-der: 1.8rem;
+}
+
+.btn--primario {
+  background-color: var(--color-primario);
+  line-height: normal;
+  padding: 0.7rem 1.7rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+  text-transform: capitalize;
+}
+
+.section_divisor {
+  border: 6px solid #222;
+}
+
+/* Header de la landing page, con logo SVG y btn de login */
+.header {
+  position: absolute;
+  height: 10rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 3rem;
+}
+
+.header__logo {
+  display: block;
+  width: 15rem;
+  padding: 0 1rem;
+}
+
+.header__logo img {
+  height: 100%;
+  width: 100%;
+}
+
+/* Banner con img de fondo */
+.banner {
+  position: relative;
+  height: 75vh;
+}
+
+.banner .banner__bckg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  z-index: 5;
+}
+
+.banner .banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(0, 0, 0, 0.8)), color-stop(40%, rgba(0, 0, 0, 0.4)), color-stop(75%, rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.8)));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.4) 75%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 10;
+}
+
+.banner .banner__contenido {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 15;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding: 0 5rem;
+}
+
+.banner .banner__contenido .banner__titulo {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.banner .banner__contenido .banner__subtitulo {
+  font-size: 2.6rem;
+  font-weight: 400;
+  margin: 2rem 0;
+}
+
+/* Forma para suscripción con call to action */
+.forma_cta {
+  font-size: 1.6rem;
+  margin: 1rem 0;
+  font-size: 600;
+}
+
+.membresia__form {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+}
+
+.membresia__form .membresia__input__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.membresia__form .membresia__input__container .membresia__input {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  border: none;
+  font-size: 1.6rem;
+}
+
+.membresia__form .membresia__input__container .membresia__input:focus {
+  outline: none;
+}
+
+.membresia__form .membresia__input__container .membresia__placeholder {
+  position: absolute;
+  color: #8c8c8c;
+  top: 50%;
+  left: 1rem;
+  z-index: 10;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.4rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.membresia__form .membresia__input__container.on__focus .membresia__placeholder {
+  top: 1rem;
+  font-size: 1.2rem;
+}
+
+.membresia__form .membresia__input__msg {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  text-align: start;
+  margin: 1rem 0;
+  color: #b92d2b;
+  font-size: 1.5rem;
+  content: "";
+}
+
+.membresia__form .membresia__btn {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 100%;
+  max-width: 20rem;
+  padding: 1.5rem 3rem;
+}
+
+/* "Nuestra Historia", siguiendo el diseño de la landing original:
+cards con dos columnas, una con texto y la otra con contenido multimedia */
+.story__card {
+  padding: 5rem 5%;
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  /* Estilo para el video de la tercera card, quizá deba emprolijarlo 
+    cambiando nombres de clases, de momento me fui al sitio de Netflix 
+    y repliqué lo que fui viendo ahí */
+}
+
+.story__card .story__card__txt {
+  text-align: center;
+}
+
+.story__card .story__card__txt h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.story__card .story__card__txt h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.story__card .story__card__media {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  /* Estilo para la primera card (video en TV) */
+  /* Estilo para segunda card (afiche de Stranger Things) */
+}
+
+.story__card .story__card__media .tv__anim__container {
+  width: 30rem;
+  height: 23.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.story__card .story__card__media .tv__anim__container .tv_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.story__card .story__card__media .tv__anim__container .tv__anim {
+  position: absolute;
+  top: 0.8rem;
+  left: 4rem;
+  width: 22.1rem;
+  height: 21rem;
+}
+
+.story__card .story__card__media .descarga__container {
+  position: relative;
+}
+
+.story__card .story__card__media .descarga__container img {
+  width: 100%;
+  height: 100%;
+}
+
+.story__card .story__card__media .descarga__container .descarga__container__anim {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4rem 1fr 5rem;
+      grid-template-columns: 4rem 1fr 5rem;
+  width: 60%;
+  height: 8rem;
+  padding: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1rem;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 5%;
+  background: black;
+  -webkit-box-shadow: 0 0 2em 0 #000;
+          box-shadow: 0 0 2em 0 #000;
+}
+
+.story__card .story__card__media .descarga__container .descarga__container__anim .afiche {
+  height: 90%;
+}
+
+.story__card .story__card__media .descarga__container .descarga__container__anim .descarga__gif {
+  height: 90%;
+}
+
+.story__card .story__card__media .descarga__container .descarga__container__anim .txt__container {
+  padding-left: 2rem;
+}
+
+.story__card .story__card__media .descarga__container .descarga__container__anim .txt__container .title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.story__card .story__card__media .descarga__container .descarga__container__anim .txt__container .descargando {
+  font-size: 1.2rem;
+  color: #0071eb;
+}
+
+.story__card .story__card__media .kids {
+  width: 100%;
+}
+
+.story__card .story__card__media-container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  height: 100%;
+  width: 48%;
+}
+
+.story__card .story__card__media-container .story__card__animation {
+  margin: -5% -10% 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.story__card .story__card__media-container .story__card__animation img {
+  position: relative;
+  z-index: 2;
+}
+
+.story__card .story__card__media-container .story__card__animation .tv__anim__container {
+  height: 100%;
+  left: 50%;
+  max-height: 47%;
+  max-width: 65%;
+  position: absolute;
+  top: 34%;
+  -webkit-transform: translate(-45%, -50%);
+          transform: translate(-45%, -50%);
+  width: 100%;
+}
+
+.story__card .story__card__media-container .story__card__animation .tv__anim__container video {
+  height: 100%;
+  width: 100%;
+}
+
+/* Preguntas frecuentes */
+.faq {
+  padding: 7rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.faq .faq__title {
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1.8;
+}
+
+.faq .acordeon {
+  list-style: none;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 1rem;
+  font-size: 2rem;
+  /* Clase active a llamar con JS: translate al svg de los acordeones */
+}
+
+.faq .acordeon .acordeon__li .pregunta {
+  background-color: #303030;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: var(--acordeon-padding);
+  padding-right: var(--acordeon-padding-der);
+  margin-bottom: 1px;
+  font-size: inherit;
+  position: relative;
+  cursor: pointer;
+}
+
+.faq .acordeon .acordeon__li .pregunta .svg-icon {
+  fill: #fff;
+  height: 1em;
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
+  width: 1em;
+}
+
+.faq .acordeon .acordeon__li .respuesta {
+  background-color: #303030;
+  padding: var(--acordeon-padding);
+  display: none;
+}
+
+.faq .acordeon .acordeon__li.active .pregunta .svg-icon {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.faq .acordeon .acordeon__li.active .respuesta {
+  display: block;
+}
+
+/* Pie de página */
+.footer {
+  padding: 8rem 6rem 4rem;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.footer p {
+  font-size: 1.3rem;
+  color: #757575;
+  text-transform: capitalize;
+}
+
+.footer .footer__link__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+.footer .footer__link {
+  font-size: 1.3rem;
+  color: #757575;
+  text-transform: capitalize;
+}
+
+.footer .footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer .footer__link.contact--link {
+  display: inline-block;
+  margin: 3rem 0;
+}
+/*# sourceMappingURL=main.css.map */

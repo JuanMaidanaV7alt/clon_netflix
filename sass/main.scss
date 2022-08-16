@@ -1,0 +1,10 @@
+// Reset, config. general y utilidades (colores, variables, etc)
+@import "reset"; 
+@import "utilidades";
+// Aspectos del sitio: encabezado, banner con img de fondo
+@import "header";
+@import "banner";
+@import "forma";
+@import "historia";
+@import "faq";
+@import "footer";

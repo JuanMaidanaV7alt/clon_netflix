@@ -1,0 +1,53 @@
+/* Media Queries */
+
+@media  screen and (min-width: 600px) {
+    
+    .membresia__btn {
+        font-size: 2rem;
+    }
+
+
+    /* "Nuestra historia" */
+    .story__card__txt {
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+
+        }
+    }
+
+    .tv__anim__container {
+        width: 50rem;
+        height: 38rem;
+
+        .tv__anim{
+            top: 3.5rem;
+            left: 6.6rem;
+            width: 37rem;
+            height: 29.5rem;
+        }
+    }
+
+    
+    /* Preguntas frecuentes */
+    .faq__title {
+        font-size: 3.5rem;
+    }
+
+
+    /* Pie de página */
+    .footer__link__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .footer__link {
+        font-size: 1.5rem;
+    }
+    .footer p {
+        font-size: 1.5rem;
+    }
+}

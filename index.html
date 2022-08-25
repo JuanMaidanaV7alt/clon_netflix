@@ -19,11 +19,11 @@
 
     <header class="header">
 
-        <a class="header__logo">
+        <div class="header__logo">
             <img src="./img/logo.svg" alt="Netflix"></img>
-        </a>
+        </div>
 
-        <a href="#" class="sign__in__btn btn--primario">Iniciar sesión</a>
+        <a href="./pages/login.html" class="sign__in__btn btn--primario">Iniciar sesión</a>
     </header>
 
     <section class="banner">
@@ -42,12 +42,21 @@
                 para crear una cuenta o reiniciar tu membresía de Netflix.
             </h3>
 
-            <form action="" class="membresia__form">
-                <div class="membresia__input__container">
-                    <input type="email" class="membresia__input">
-                    <label for="email" class="membresia__placeholder">Email</label>
+            <form action="" class="membresia__form" id="membresiaForm">
+                <div class="membresia__input__container" id="membresiaInputContainer">
+                    <input type="email" class="membresia__input" id="membresiaInput">
+                    <label for="email" class="membresia__placeholder" id="membresiaPlaceholder">
+                        Email
+                    </label>
                 </div>
-                <label class="membresia__input__msg"></label>
+                <label class="membresia__input__msg" id="membresiaInputMsg"></label>
+                <div class="membresia__input__container" id="membresiaInputContainerPass">
+                    <input type="password" class="membresia__input" id="membresiaInputPass">
+                    <label for="password" class="membresia__placeholder" id="membresiaPlaceholderPass">
+                        Contraseña
+                    </label>
+                </div>
+                <label class="membresia__input__msg" id="membresiaInputMsgPass"></label>
                 <button class="membresia__btn btn--primario" type="submit">Comenzar</button>
             </form>
         </div>
@@ -55,10 +64,12 @@
 
     <hr class="section_divisor">
 
+    <!-- "Quiénes somos" / Nuestra historia (secciones c/cards, cada una de ellas 
+    con texto) de un lado y contenido multimedia del otro -->
     <div class="story__card__container">
         <section class="story__card">
 
-            <div class="story__card__txt">
+            <div class="story__card__txt izq">
 
                 <!-- Veremos múltiples encabezados de nivel h1 y h2 porque así es como
                 aparecen en el sitio original -->
@@ -70,7 +81,7 @@
 
             </div>
 
-            <div class="story__card__media">
+            <div class="story__card__media der">
                 <div class="tv__anim__container">
                     <img src="./img/landing_tv.png" alt="Reproducción de contenido en TV" class="tv_img">
                     <video autoplay playsinline muted loop src="./img/landing_tv_video.m4v" class="tv__anim"></video>
@@ -83,14 +94,14 @@
 
         <section class="story__card">
 
-            <div class="story__card__txt">
+            <div class="story__card__txt der">
                 <h1>Descarga tus series para verlas offline.</h1>
                 <h2>
                     Guarda tu contenido favorito y tendrás siempre algo para ver.
                 </h2>
             </div>
 
-            <div class="story__card__media">
+            <div class="story__card__media izq">
                 <div class="descarga__container">
                     <img src="./img/landing_phone.jpg" 
                     alt="Eleven de Stranger Things, en la pantalla de un teléfono móvil">
@@ -115,7 +126,7 @@
 
         <section class="story__card">
 
-            <div class="story__card__txt">
+            <div class="story__card__txt izq">
                 <h1>Disfruta donde quieras.</h1>
                 <h2>
                     Películas y series ilimitadas en tu teléfono, tablet, 
@@ -123,7 +134,7 @@
                 </h2>
             </div>
 
-            <div class="story__card__media-container">
+            <div class="story__card__media-container der">
                 <div class="story__card__animation">
                     <img src="./img/landing_dispositivos.png" alt="Contenido en múltiples dispositivos" class="tv_img">
                     <div class="tv__anim__container">
@@ -139,7 +150,7 @@
 
         <section class="story__card">
 
-            <div class="story__card__txt">
+            <div class="story__card__txt der">
                 <h1>Crea perfiles para niños.</h1>
                 <h2>
                     Los niños vivirán aventuras con sus personajes favoritos en un espacio
@@ -147,7 +158,7 @@
                 </h2>
             </div>
 
-            <div class="story__card__media">
+            <div class="story__card__media izq">
                 <img src="./img/landing_ninos.png" alt="Crea perfiles para niños." class="kids">
             </div>
 
@@ -156,6 +167,7 @@
         <hr class="section_divisor">
     </div>
 
+    <!-- Preguntas frecuentes (FAQ) c/ acordeones -->
     <section class="faq">
         <h2 class="faq__title">Preguntas frecuentes</h2>
         <ul class="acordeon">
@@ -163,6 +175,7 @@
                 <button class="pregunta">
                     ¿Qué es Netflix?
                     
+                    <!-- SVG tomado del sitio original -->
                     <svg class="svg-icon">
                         <path d="M10.5 9.3L1.8 0.5 0.5 1.8 9.3 10.5 0.5 19.3 1.8 20.5 10.5 
                         11.8 19.3 20.5 20.5 19.3 11.8 10.5 20.5 1.8 19.3 0.5 10.5 9.3Z">
@@ -277,6 +290,7 @@
 
     <hr class="section__divisor">
 
+    <!-- Footer -->
     <footer class="footer">
         <p>
             ¿Preguntas? Llama al <a href="#" class="footer__link contact--link">0800 345 1593</a>
@@ -302,6 +316,7 @@
         </div>
     </footer>
     <script src="./js/main.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 
 </html>

@@ -7,6 +7,14 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
     max-width: 1400px;
     margin: 0 auto;
 
+    .izq {
+        grid-area: izquierda;
+    }
+
+    .der {
+        grid-area: derecha;
+    }
+
     & &__txt {
         text-align: center;
 

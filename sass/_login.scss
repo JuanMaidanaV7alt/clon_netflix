@@ -1,0 +1,94 @@
+.login {
+    padding: 6rem;
+    z-index: 90;
+    position: relative;
+    max-width: 450px;
+    height: 630px;
+    margin-left: 50%;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+
+    input {
+
+        height: 50px;
+        width: 100%;
+        border-radius: 0.3rem;
+        color: #fff;
+        background: #333;
+        border: 1px solid #333;
+        padding-left: 1.5rem;
+        box-sizing: border-box;
+        outline: none;
+    }
+    & &__box {
+
+        h2 {
+
+            font-size: 3.2rem;
+            color: white;
+            margin-top: 0;
+        }
+
+        & form {
+            
+            .login__input {
+    
+                margin-bottom: 2.5rem;
+                position: relative;
+    
+                button {
+    
+                    height: 50px;
+                    width: 100%;
+                    color: #fff;
+                    background: #e50914;
+                    border-radius: 3px;
+                    font-weight: 500;
+                    font-size: 1.6rem;
+                    border: 1px solid #e50914;
+                }
+
+                .login__placeholder {
+
+                    position: absolute;
+                    color: #8c8c8c; 
+                    top: 50%;
+                    left: 1rem;
+                    z-index: 10;
+                    transform: translateY(-50%);
+                    font-size: 1.4rem;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            .login__input.on__focus .login__placeholder {
+                
+                top: 1rem;
+                font-size: 1.2rem;        
+            }
+
+            .support {
+
+                display: flex;
+                color: #fff;
+                justify-content: space-between;
+                font-size: 1.2rem;
+
+                .recuerdame {
+
+                    display: flex;
+                    align-items: center;
+
+                    span {
+
+                        margin-right: 1rem;
+                        height: 25px;
+
+                    }
+                }
+            }
+        } 
+    }
+}

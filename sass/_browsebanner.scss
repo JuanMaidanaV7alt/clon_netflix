@@ -1,0 +1,63 @@
+#browseBanner {
+    color: white;
+    object-fit: contain;
+    height: 844px;
+    background-position: center center;
+    background-size: cover;
+
+    #browseBannerCont {
+        margin-left: 70px;
+        padding-top: 540px;
+        height: 190px;
+        
+        #browseBannerTit {
+            font-size: 4.8rem;
+            font-weight: 800;
+            padding-bottom: 0.48rem;
+        }
+
+        .banner__btn {
+            cursor: pointer;
+            color: white;
+            outline: none;
+            border: none;
+            font-weight: 700;
+            border-radius: .2vw;
+            padding-left: 3.2rem;
+            margin-top: 1.6rem;
+            margin-bottom: 1rem;
+            padding-right: 3.2rem;
+            margin-right: 1.6rem;
+            padding-top: .8rem;
+            background-color: rgba(51, 51, 51, .5);
+            padding-bottom: .8rem;
+        }
+        
+        .banner__btn:hover {
+            color: black;
+            background-color: #e6e6e6;
+            transition: all .3s;
+        }
+        
+        #bannerDescripcion {
+            width: 720px;
+            line-height: 1.5;
+            padding-top: 1.6rem;
+            font-size: 1.44rem;
+            max-width: 360px;
+            height: 80px;
+        }
+    }
+
+    #bannerFadeBottom {
+        height: 7.4rem;
+        background: linear-gradient(180deg,
+                transparent,
+                rgba(37, 37, 37, .61),
+                #111);
+    }
+}
+
+
+
+

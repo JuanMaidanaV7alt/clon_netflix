@@ -17,6 +17,7 @@
 
 <body>
 
+    <!-- Header c/logo de Netflix y btn para redirigir a login -->
     <header class="header">
 
         <div class="header__logo">
@@ -26,6 +27,8 @@
         <a href="./pages/login.html" class="sign__in__btn btn--primario">Iniciar sesión</a>
     </header>
 
+
+    <!-- Banner con formulario de registro simulado (sin backend) -->
     <section class="banner">
         <img src="./img/banner-landing.jpg" alt="¡Cientos de películas para disfrutar!" class="banner__bckg">
 
@@ -51,8 +54,8 @@
                 </div>
                 <label class="membresia__input__msg" id="membresiaInputMsg"></label>
                 <div class="membresia__input__container" id="membresiaInputContainerPass">
-                    <input type="password" class="membresia__input" id="membresiaInputPass">
-                    <label for="password" class="membresia__placeholder" id="membresiaPlaceholderPass">
+                    <input type="text" class="membresia__input" id="membresiaInputPass">
+                    <label for="text" class="membresia__placeholder" id="membresiaPlaceholderPass">
                         Contraseña
                     </label>
                 </div>
@@ -315,8 +318,8 @@
 
         </div>
     </footer>
+    <script src="./js/functions.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/login.js"></script>
 </body>
 
 </html>

@@ -1,71 +1,26 @@
+// vars p/login
+const loginForm = document.querySelector('#loginForm')
+const loginEmail = document.querySelector('#loginEmail');
+const loginPassword = document.querySelector('#loginPassword');
+const emailMsg = document.querySelector('.email__msg');
+const passwordMsg = document.querySelector('.password__msg');
+
 const usuariosDesdeStorage = JSON.parse(localStorage.getItem('usuarios'));
 
+/* se me ocurre usar el map para agregar, además, una pp de avatar
+(aleatorio) para cada usuario, por ahora solo sumo id */ 
+const userDataBase = usuariosDesdeStorage.map(usuario => {
 
-const validarUsuario = (correo) => {
-    
-    let acc = false
-    
-    for(el of usuariosDesdeStorage) {
+    //////////////
+    ////SPREAD////
+    //////////////
+    return {...usuario, id: usuariosDesdeStorage.indexOf(usuario)};
+});
 
-        if(correo == el.email) {
-            acc = true;
-            return true;
-
-        }
-        
-        if(acc == false) {
-            return false;
-        }   
-    }
-}
-
-
-const validarPass = (correo, pass) => {
-
-    for(el of usuariosDesdeStorage) {
-
-        if(correo == el.email && pass == el.pass) {
-
-            return true;
-
-        } else if(correo == el.email && pass != el.pass) {
-
-            return false;
-        }
-    }
-}
-
-
-// Handle para el login: prevenimos comportamiento por default
-const handleLogin = (e) => {
-
-    e.preventDefault();
-
-    const userValido = validarUsuario(loginEmail.value);
-    const passValida = validarPass(loginEmail.value, loginPassword.value);
-
-    /* Si emailValido = true, mostramos un mensaje, reseteamos el input
-    y removemos la clase .on__focus. Pusheamos al array de emails y lo almacenamos
-    en local. En caso contrario, mostramos una advertencia */
-    if(userValido && passValida) {
-
-        // membresiaInputMsg.innerText = '¡Gracias por suscribirte!';
-        // membresiaInput.value = '';
-        // membresiaInputContainer.classList.remove(ON_FOCUS);
-        // window.location.href = "#"
-        alert('Login exitoso')
-
-    } else if(userValido && passValida == false) {
-
-        // membresiaInputMsg.innerText = 'Contraseña incorrecta.';
-        alert('Contraseña incorrecta.')
-
-    } else if(userValido == false) {
-        alert('No existe usuario')
-    }
-    
-
-}
+/* vars que contienen strings (en el primer caso, de una clase que agregaremos luego,
+en el segundo, del evento focusin */ 
+const ON_FOCUS = 'on__focus';
+const FOCUS_IN = 'focusin';
 
 
 loginEmail.addEventListener(FOCUS_IN, handleFocus);

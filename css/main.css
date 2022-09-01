@@ -813,4 +813,12 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
           transform: scale(1.09);
   opacity: 1;
 }
+
+.swal2-popup #swal2-title {
+  font-size: 1.6rem !important;
+}
+
+.swal2-popup #swal2-html-container {
+  font-size: 1.4rem !important;
+}
 /*# sourceMappingURL=main.css.map */

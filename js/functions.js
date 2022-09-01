@@ -159,35 +159,22 @@ const handleLogin = (e) => {
         // membresiaInput.value = '';
         // membresiaInputContainer.classList.remove(ON_FOCUS);
         // window.location.href = "#"
-        // alert('Login exitoso')
         Swal.fire({
             icon: 'success',
             title: 'Bienvenido',
             text: 'En breve te estaremos redirigiendo al Home',
+            backdrop: false,
+
         })
         
 
     } else if(userValido && passValida == false) {
 
         // membresiaInputMsg.innerText = 'Contraseña incorrecta.';
-        // alert('Contraseña incorrecta.')
-        Swal.fire({
-            icon: 'error',
-            title: 'Lo sentimos',
-            text: 'La contraseña ingresada es incorrecta',
-            footer: '<a href="">¿Necesitas ayuda para registrarte?</a>'
-        })
-
+        passAlert();
     } else if(userValido == false) {
+        
         // alert('No existe usuario')
-        Swal.fire({
-            icon: 'error',
-            title: 'Lo sentimos',
-            text: 'No existe ningún usuario con esta cuenta',
-            footer: '<a href="">¿Necesitas ayuda para registrarte?</a>'
-        })
-
+        userAlert();
     }
-    
-
 }

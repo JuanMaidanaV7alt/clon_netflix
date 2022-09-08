@@ -1,3 +1,4 @@
+// Navbar sticky
 window.addEventListener("scroll",function(){
 
     var nav = document.querySelector(".nav");

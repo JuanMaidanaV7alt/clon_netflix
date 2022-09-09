@@ -155,18 +155,15 @@ const handleLogin = (e) => {
     en local. En caso contrario, mostramos una advertencia */
     if(userValido && passValida) {
 
-        // membresiaInputMsg.innerText = '¡Gracias por suscribirte!';
-        // membresiaInput.value = '';
-        // membresiaInputContainer.classList.remove(ON_FOCUS);
-        // window.location.href = "#"
-        Swal.fire({
+        window.location.href = "/pages/browse.html"
+/*         Swal.fire({
             icon: 'success',
             title: 'Bienvenido',
             text: 'En breve te estaremos redirigiendo al Home',
             backdrop: false,
 
         })
-        
+ */        
 
     } else if(userValido && passValida == false) {
 
@@ -176,5 +173,28 @@ const handleLogin = (e) => {
         
         // alert('No existe usuario')
         userAlert();
+    }
+}
+
+////////////////////////////////////////////////////////////////////////
+/////////////////////////////// FUNCIONES PARA BROWSE //////////////////
+////////////////////////////////////////////////////////////////////////
+
+// Funciones que usaremos para agregar y quitar clases al nav
+
+const addStyles = () => {
+    navDer.classList.add("active");
+    caret.classList.add("open");
+    nav.classList.add("active");
+    dropdown.style.display = "";
+}
+
+const removeStyles = () => {
+    navDer.classList.remove("active");
+    caret.classList.remove("open");
+    dropdown.style.display = "none";
+
+    if(window.scrollY == 0) {
+        nav.classList.remove("active");
     }
 }

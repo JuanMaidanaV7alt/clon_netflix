@@ -90,7 +90,7 @@ const createPopular = async () => {
     headrow.appendChild(row);
     const title = document.createElement("h2");
     title.className = "row__title";
-    title.innerText = "Trending Now";
+    title.innerText = "Tendencias";
     row.appendChild(title);
     const row_posters = document.createElement("div");
     row_posters.className = "row__posters";
@@ -119,7 +119,7 @@ const createTrending = async () => {
     headrow.appendChild(row);
     const title = document.createElement("h2");
     title.className = "row__title";
-    title.innerText = "Top Rated";
+    title.innerText = "Más aclamadas";
     row.appendChild(title);
     const row_posters = document.createElement("div");
     row_posters.className = "row__posters";
@@ -149,7 +149,7 @@ const createAction = async () => {
     headrow.appendChild(row);
     const title = document.createElement("h2");
     title.className = "row__title";
-    title.innerText = "Action Movies";
+    title.innerText = "Acción";
     row.appendChild(title);
     const row_posters = document.createElement("div");
     row_posters.className = "row__posters";
@@ -178,7 +178,7 @@ const createComedy = async () => {
     headrow.appendChild(row);
     const title = document.createElement("h2");
     title.className = "row__title";
-    title.innerText = "Comedy Movies";
+    title.innerText = "Comedia";
     row.appendChild(title);
     const row_posters = document.createElement("div");
     row_posters.className = "row__posters";
@@ -207,7 +207,7 @@ const createHorror = async () => {
     headrow.appendChild(row);
     const title = document.createElement("h2");
     title.className = "row__title";
-    title.innerText = "Horror Movies";
+    title.innerText = "Películas de terror";
     row.appendChild(title);
     const row_posters = document.createElement("div");
     row_posters.className = "row__posters";
@@ -236,7 +236,7 @@ const createRomance = async () => {
     headrow.appendChild(row);
     const title = document.createElement("h2");
     title.className = "row__title";
-    title.innerText = "Romance Movies";
+    title.innerText = "Películas románticas";
     row.appendChild(title);
     const row_posters = document.createElement("div");
     row_posters.className = "row__posters";
@@ -265,7 +265,7 @@ const createDocumentaries = async () => {
     headrow.appendChild(row);
     const title = document.createElement("h2");
     title.className = "row__title";
-    title.innerText = "Documentaries";
+    title.innerText = "Documentales";
     row.appendChild(title);
     const row_posters = document.createElement("div");
     row_posters.className = "row__posters";
@@ -281,19 +281,3 @@ const createDocumentaries = async () => {
 
     });
 }
-
-/* pageLoad para detener la ejecución del código en el cargado 
-y asegurarnos de que las rows se rendericen en el orden correcto*/ 
-const pageLoad = async () => {
-    await createBanner();
-    await createOriginals();
-    await createPopular();
-    await createTrending();
-    await createAction();
-    await createComedy();
-    await createHorror();
-    await createRomance();
-    await createDocumentaries();
-}
-
-window.addEventListener("load", pageLoad);

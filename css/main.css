@@ -154,10 +154,6 @@ button {
   display: -ms-grid;
   display: grid;
   position: relative;
-  /*     .membresia__input__container.false#membresiaInputPass {
-
-    }
- */
 }
 
 .membresia__form .membresia__input__container {
@@ -217,15 +213,14 @@ button {
   width: 100%;
   max-width: 20rem;
   padding: 1.5rem 3rem;
+  cursor: pointer;
 }
 
 /* "Nuestra Historia", siguiendo el diseño de la landing original:
 cards con dos columnas, una con texto y la otra con contenido multimedia */
 .story__card {
   padding: 5rem 5%;
-  display: -ms-grid;
-  display: grid;
-  grid-row-gap: 1rem;
+  display: block;
   max-width: 1400px;
   margin: 0 auto;
   /* Estilo para el video de la tercera card, quizá deba emprolijarlo 
@@ -246,13 +241,13 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
 }
 
 .story__card .story__card__txt h1 {
-  font-size: 3rem;
+  font-size: 4.44rem;
   margin-bottom: 1rem;
 }
 
 .story__card .story__card__txt h2 {
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 500;
 }
 
 .story__card .story__card__media {
@@ -264,8 +259,8 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
 }
 
 .story__card .story__card__media .tv__anim__container {
-  width: 30rem;
-  height: 23.4rem;
+  width: 44rem;
+  height: 35.4rem;
   position: relative;
   overflow: hidden;
 }
@@ -273,18 +268,18 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
 .story__card .story__card__media .tv__anim__container .tv_img {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  left: -46px;
+  max-width: 55rem;
+  max-height: 38rem;
   z-index: 2;
 }
 
 .story__card .story__card__media .tv__anim__container .tv__anim {
   position: absolute;
   top: 0.8rem;
-  left: 4rem;
-  width: 22.1rem;
-  height: 21rem;
+  left: 2rem;
+  width: 39.5rem;
+  height: 32.5rem;
 }
 
 .story__card .story__card__media .descarga__container {
@@ -348,31 +343,33 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
 .story__card .story__card__media-container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
   height: 100%;
-  width: 48%;
+  margin-top: 4rem;
 }
 
 .story__card .story__card__media-container .story__card__animation {
-  margin: -5% -10% 0 0;
   overflow: hidden;
   position: relative;
+  width: 47rem;
+  height: 35.4rem;
 }
 
-.story__card .story__card__media-container .story__card__animation img {
-  position: relative;
+.story__card .story__card__media-container .story__card__animation .tv_img {
+  position: absolute;
   z-index: 2;
+  top: 0;
+  right: -5px;
+  height: auto;
+  width: 100%;
 }
 
 .story__card .story__card__media-container .story__card__animation .tv__anim__container {
   height: 100%;
-  left: 50%;
-  max-height: 47%;
+  left: 38%;
+  max-height: 45%;
   max-width: 65%;
   position: absolute;
   top: 34%;
@@ -383,7 +380,6 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
 
 .story__card .story__card__media-container .story__card__animation .tv__anim__container video {
   height: 100%;
-  width: 100%;
 }
 
 /* Preguntas frecuentes */
@@ -500,15 +496,11 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
   .story__card__txt h2 {
     font-size: 2.2rem;
   }
-  .tv__anim__container {
-    width: 50rem;
-    height: 38rem;
-  }
   .tv__anim__container .tv__anim {
     top: 3.5rem;
     left: 6.6rem;
-    width: 37rem;
-    height: 29.5rem;
+    width: 39.1rem;
+    height: 33rem;
   }
   /* Preguntas frecuentes */
   .faq__title {
@@ -534,19 +526,10 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
   .banner__subtitulo {
     font-size: 2rem;
   }
-  .membresia__form {
-    -ms-grid-columns: 70% 1fr;
-        grid-template-columns: 70% 1fr;
-  }
-  .membresia__input__msg {
-    -ms-grid-row: 2;
-    grid-row: 2;
-  }
-  .membresia__btn {
-    -ms-grid-column-align: start;
-        justify-self: start;
-  }
   .story__card {
+    display: -ms-grid;
+    display: grid;
+    grid-row-gap: 1rem;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "izquierda derecha";
@@ -647,6 +630,10 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
 .login .login__box form .support .recuerdame span {
   margin-right: 1rem;
   height: 25px;
+}
+
+.login .login__box form .support .recuerdame span input.check {
+  height: 15px;
 }
 
 .nav {

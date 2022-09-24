@@ -22,7 +22,7 @@ const FOCUS_IN = 'focusin';
 
 
 // querySelectorAll para seleccionar todos los elementos con la clase pregunta
-const acordeonPreguntaEls = document.querySelectorAll('.pregunta')
+const acordeonPreguntaEls = document.querySelectorAll('.pregunta, .svg-icon')
 
 
 // Array para almacenar usuarios registrados
@@ -46,8 +46,8 @@ acordeonPreguntaEls.forEach(element => {
     (es decir que se la agrega o quita a los .acordeon__li, y así afecta
     a sus hijos: translate en el svg y display de la respuesta) */
     const handler = (e) => {
-        const {target: {parentElement: parent}} = e;
-        parent.classList.toggle('active');
+        const acordeon = e.target.closest('li.acordeon__li');
+        acordeon.classList.toggle('active');
     }
 
     // Llamamos a la función con el click

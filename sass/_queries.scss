@@ -21,14 +21,12 @@
     }
 
     .tv__anim__container {
-        width: 50rem;
-        height: 38rem;
 
         .tv__anim{
             top: 3.5rem;
             left: 6.6rem;
-            width: 37rem;
-            height: 29.5rem;
+            width: 39.1rem;
+            height: 33rem;
         }
     }
 
@@ -61,22 +59,13 @@
         font-size: 2rem;
     }
 
-    .membresia__form {
-        grid-template-columns: 70% 1fr;
-    }
-
-    .membresia__input__msg {
-        grid-row: 2;
-    }
-
-    .membresia__btn {
-        justify-self: start;
-    }
-
-
     .story__card {
+        display: grid;
+        grid-row-gap: 1rem;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "izquierda derecha";
         align-items: center;
     }
+
+    
 }

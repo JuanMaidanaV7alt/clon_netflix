@@ -2,8 +2,7 @@
 cards con dos columnas, una con texto y la otra con contenido multimedia */
 .story__card {
     padding: 5rem 5%;
-    display: grid;
-    grid-row-gap: 1rem;
+    display: block;
     max-width: 1400px;
     margin: 0 auto;
 
@@ -19,13 +18,13 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
         text-align: center;
 
         h1 {
-            font-size: 3rem;
+            font-size: 4.44rem;
             margin-bottom: 1rem;
         }
 
         h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
+            font-size: 2.5rem;
+            font-weight: 500;
         }
     }
 
@@ -35,26 +34,26 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
 
         /* Estilo para la primera card (video en TV) */
         .tv__anim__container {
-            width: 30rem;
-            height: 23.4rem;
+            width: 44rem;
+            height: 35.4rem;
             position: relative;
             overflow: hidden;
 
             .tv_img {
                 position: absolute;
                 top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+                left: -46px;
+                max-width: 55rem;
+                max-height: 38rem;
                 z-index: 2;
             }
 
             .tv__anim {
                 position: absolute;
                 top: 0.8rem;
-                left: 4rem;
-                width: 22.1rem;
-                height: 21rem;
+                left: 2rem;
+                width: 39.5rem;
+                height: 32.5rem;
             }
 
         }
@@ -75,7 +74,6 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
                 height: 8rem;
                 padding: 1rem;
                 align-items: center;
-                // border: 2px solid rgba(255, 255, 255, 0.25);
                 border-radius: 1rem;
                 position: absolute;
                 left: 50%;
@@ -120,34 +118,38 @@ cards con dos columnas, una con texto y la otra con contenido multimedia */
     y repliqué lo que fui viendo ahí */
     & &__media-container {
         box-sizing: border-box;
-        display: flex;
-        flex: 0 1 auto;
+        display: grid;
+        place-items: center;
         height: 100%;
-        width: 48%;
+        margin-top: 4rem;
 
         .story__card__animation {
-            margin: -5% -10% 0 0;
             overflow: hidden;
             position: relative;
+            width: 47rem;
+            height: 35.4rem;
             
-            img {
-                position: relative;
+            .tv_img {
+                position: absolute;
                 z-index: 2;
+                top: 0;
+                right: -5px;
+                height: auto;
+                width: 100%;
             }
 
             .tv__anim__container {
                 height: 100%;
-                left: 50%;
-                max-height: 47%;
+                left: 38%;
+                max-height: 45%;
                 max-width: 65%;
                 position: absolute;
                 top: 34%;
-                transform: translate(-45%,-50%);
+                transform: translate(-45%, -50%);
                 width: 100%;
 
                 video {
                     height: 100%;
-                    width: 100%;
                 }
             }
         }
